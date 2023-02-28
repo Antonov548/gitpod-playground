@@ -1,13 +1,7 @@
 
 tasks:
   - name: workspace
-    init: |
-      # Scriptlets, with custom Git config
-      mv ~/.gitconfig ~/.gitconfig.gitpod
-      curl -s https://raw.githubusercontent.com/krlmlr/scriptlets/master/bootstrap | sh
-
-      ## .editorconfig
-      ln -s ~/.editorconfig ..
+    init: 
 vscode:
   extensions:
     - ms-vscode.cpptools
