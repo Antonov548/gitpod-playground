@@ -1,7 +1,6 @@
 
 tasks:
   - name: workspace
-    init: 
 vscode:
   extensions:
     - ms-vscode.cpptools
