@@ -13,7 +13,8 @@ rig system make-links
 rig system setup-user-lib
 
 # Deps
-sudo apt install -y ccache cmake
+sudo apt update
+sudo apt install -y ccache cmake r-base libharfbuzz-dev libfribidi-dev
 
 ## Set up ccache
 ln -s /usr/lib/ccache/* ~/bin/
@@ -33,7 +34,7 @@ echo -e "MAKEFLAGS = -j8\nCXXFLAGS = -O0 -g" > ~/.R/Makevars
 echo 'options(repos = "https://packagemanager.rstudio.com/all/__linux__/'$(cat /etc/lsb-release | sed  -n '/DISTRIB_CODENAME=/ {s///;p}')'/latest")' >> ~/.Rprofile
 
 ## Install devtools and R dependencies
-R -q -e 'pak::pak(c("devtools", "languageserver", "styler")); pak::pak("deps::.", dependencies = TRUE)'
+R -q -e 'pak::pak(); pak::pak(c("devtools", "languageserver", "styler"));'
 
 # Install radian
 sudo pip install radian
